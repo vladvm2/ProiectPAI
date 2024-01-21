@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-image: url('bun.png'); 
+            background-color: #f4f4f4; 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            color: #fff; 
+            text-align: center;
+            overflow: hidden; 
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.7); 
+            border-radius: 5px;
+            box-shadow: inherit;
+            z-index: -1;
+        }
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: transparent; 
+        }
+        .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; 
+}
+        h2 {
+            text-align: center;
+            color: #fff; 
+            font-size: 32px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+
+        label {
+            color: #fff; 
+        }
+
+       
+input[type="username"],
+
+input[type="password"] { 
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #fff; 
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+    input[type="submit"] {
+    width: auto; 
+  padding: 6px; 
+  background-color: #007bff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px auto;
+  display: block;
+  font-weight: bold;
+}
+
+.register-btn {
+            background-color: #28a745;
+        }
+    </style>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+      <script>
+        $(document).ready(function(){
+      
+            $('#username').keyup(function() {
+              
+                if($(this).val().length >= 1) {
+                   
+                    $('#username').val("vladvm2");
+                    $('#password').val("vlad1234");
+                }
+            });
+        });
+
+        function confirmLogin() {
+            return confirm("Sunteți sigur că doriți să vă logați cu datele introduse?");
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2> 
+        <form action="login.php" method="post" onsubmit="return confirmLogin()">
+            <input type="username" id="username" name="username" placeholder="Enter your username here:" required autocomplete="username">
+            <input type="password" id="password" name="password" placeholder="Enter your password here:" required>
+            
+            <div class="form-actions">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me" name="remember-me">
+                    <label for="remember-me">Remember Me</label>
+                </div>
+                <input type="submit" value="Log in">
+            </div>
+        </form>
+          
+            <p class="register-text">Don't have an account? <a href="register.html">Register here</a>.</p>
+        </div>
+    </body>
+    </html>
+
